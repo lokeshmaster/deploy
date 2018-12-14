@@ -9,7 +9,7 @@ node{
    }
    stage('Deploy to Tomcat'){
       
-      sh 'cp tlt/target/tlt.war TOMCAT_DIRECTORY/webapps/'
+      sh 'cp target/*.war TOMCAT_DIRECTORY/webapps/'
    }
    stage('Email Notification'){
       mail bcc: '', body: '''Hi Welcome to jenkins email alerts
