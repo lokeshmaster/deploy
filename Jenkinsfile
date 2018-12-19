@@ -5,7 +5,7 @@ node{
    stage('Compile-Package'){
       // Get maven home path
       def M2_HOME =  tool name: 'maven', type: 'maven'   
-      bat "${M2_HOME}/bin/mvn package"
+      bat '${M2_HOME}/bin/mvn clean package'
    }
    stage('Email Notification'){
       mail bcc: '', body: '''Hi Welcome to jenkins email alerts
